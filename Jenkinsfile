@@ -21,5 +21,12 @@ pipeline
                 sh 'git log -1 --oneline'
             }
         }
+        stage('test')
+        {
+            steps
+            {
+                echo 'ALL TEST ARE DONE!'
+            }
+        }
     }
 }
