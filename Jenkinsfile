@@ -12,20 +12,20 @@ pipeline
             }
         }
 
-        stage('VERIFY')
+        stage('READ')
         {
             steps
             {
-                sh 'pwd'
-                sh 'ls -la'
-                sh 'git log -1 --oneline'
+                sh 'cat app.txt'
             }
         }
-        stage('test')
+        stage('MODIFY')
         {
             steps
             {
-                echo 'ALL TEST ARE DONE!'
+               sh 'echo "BUILD HANDLED BY JENKINS!" >> app.txt'
+
+                sh 'cat app.txt'
             }
         }
     }
